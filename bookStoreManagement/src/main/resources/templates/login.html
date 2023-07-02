@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+ /* font-family: Arial, Helvetica, sans-serif;*/
+  font-family: 'Muli', sans-serif;  
+  background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  padding: 16px,0px,16px,80px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin:auto;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background:  #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/*hr {
+ margin-bottom: 25px;
+  border: 1px solid black;
+ 
+}*/
+
+
+.loginbtn {
+  background-color: #28a745;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.loginbtn:hover {
+  opacity: 1;
+  background: #28a745;  
+}
+
+a {
+  color:dodgerblue;; 
+}
+a:hover {  
+  
+  text-decoration: none;  
+}
+h1{
+color: black;
+text-align:center; 
+font-weight: bold; 
+font-size: 30px;
+}
+.b1{
+border:1px solid black;
+padding:10px;
+}
+
+  
+.signup {
+  background-color: white;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="pt-5">  
+<h1 class="text-center"> User Login </h1>
+<div class="container">
+<div class="row">  
+                    <div class="col-md-5 mx-auto">  
+                        <div class="card card-body">  
+<form th:action="@{/login_user}" method="post">
+<!-- 
+    <p>Please fill in this form to create an account.</p>
+      <hr> -->
+<div class="b1">
+    <label for="username"><b>Enter your Name / Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+ <div class="form-group required">  
+      <label for="password"><b> Enter your Password   </b>
+    <a class="ml-auto border-link small-xl" href="#" style="padding-left:250px"> Forget Password? </a> </label>  
+<input type="password" placeholder="Enter Password" name="password" id="password" required>
+       </div>  
+       
+     <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    
+    <button type="submit" class="loginbtn">Log In </button>
+  
+    <div class="signup">
+    <p class="small-xl pt-3 text-center"><span class="text-muted">Not a member? </span><a href="register_user">Sign up</a></p>
+  </div>
+  
+ 
+  
+  </div>
+  <!--<hr>  -->
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
